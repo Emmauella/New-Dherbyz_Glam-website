@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#eedfe1",
+                        "surface-container-low": "#fff0f2",
+                        "on-surface": "#211a1b",
+                        "inverse-on-surface": "#fcedef",
+                        "on-secondary-container": "#7a4e4f",
+                        "error": "#ba1a1a",
+                        "outline": "#827473",
+                        "primary-container": "#d4a5a5",
+                        "tertiary-container": "#d2ad35",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#ffdad9",
+                        "surface": "#fff8f8",
+                        "primary": "#7b5455",
+                        "on-tertiary-container": "#534100",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#fff8f8",
+                        "surface-tint": "#7b5455",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#504444",
+                        "tertiary-fixed": "#ffe088",
+                        "secondary-fixed": "#ffdad9",
+                        "tertiary": "#735c00",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#fdc3c3",
+                        "surface-dim": "#e5d7d9",
+                        "surface-container-highest": "#eedfe1",
+                        "secondary": "#7f5353",
+                        "surface-container-high": "#f4e5e7",
+                        "on-primary-fixed": "#2f1314",
+                        "on-primary-fixed-variant": "#603d3e",
+                        "outline-variant": "#d4c2c2",
+                        "inverse-surface": "#372e30",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#f1b8b8",
+                        "on-secondary-fixed-variant": "#643c3c",
+                        "on-primary-container": "#5d3a3b",
+                        "on-background": "#211a1b",
+                        "on-secondary-fixed": "#311213",
+                        "surface-container": "#f9eaec",
+                        "surface-bright": "#fff8f8",
+                        "primary-fixed-dim": "#ecbbba",
+                        "inverse-primary": "#ecbbba",
+                        "on-tertiary-fixed-variant": "#574500"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-desktop": "120px",
+                        "section-mobile": "64px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Playfair Display"],
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "headline-md": ["Playfair Display"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .rose-glow {
+            box-shadow: 0 10px 30px -10px rgba(194, 142, 142, 0.3);
+        }
+        .glass-surface {
+            background: rgba(255, 248, 248, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .gold-border {
+            border: 1px solid #735c00;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md dark:bg-inverse-surface/80 border-b border-tertiary/20 dark:border-tertiary-container/20 shadow-sm shadow-secondary/10">
+<div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
+<span class="text-headline-md font-headline-md tracking-tighter text-primary dark:text-primary-fixed-dim">Dherbyz_Glam</span>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-on-surface-variant dark:text-surface-variant text-label-caps font-label-caps hover:text-tertiary transition-colors duration-300" href="index.html">Home</a>
+<a class="text-on-surface-variant dark:text-surface-variant text-label-caps font-label-caps hover:text-tertiary transition-colors duration-300" href="services.html">Services</a>
+<a class="text-on-surface-variant dark:text-surface-variant text-label-caps font-label-caps hover:text-tertiary transition-colors duration-300" href="gallery.html">Gallery</a>
+<a class="text-on-surface-variant dark:text-surface-variant text-label-caps font-label-caps hover:text-tertiary transition-colors duration-300" href="booking.html">Booking</a>
+</nav>
+<button class="bg-tertiary text-on-tertiary px-6 py-3 rounded-full text-label-caps font-label-caps tracking-widest hover:bg-tertiary/90 transition-all active:scale-95">BOOK NOW</button>
+</div>
+</header>
+<main class="pt-32 pb-section-desktop px-gutter max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<p class="text-label-caps font-label-caps text-primary mb-4">RESERVE YOUR EXPERIENCE</p>
+<h1 class="text-display-lg font-display-lg text-on-surface mb-6">Book Your Transformation</h1>
+<div class="h-1 w-24 bg-tertiary-container mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left: Booking Form Container -->
+<div class="lg:col-span-8 space-y-12">
+<!-- Step 1: Service Selection (Bento Grid) -->
+<section>
+<div class="flex items-center gap-4 mb-8">
+<span class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold">1</span>
+<h2 class="text-headline-sm font-headline-sm">Select Your Services</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Service Card 1 -->
+<div class="group relative p-6 bg-surface border border-outline-variant rounded-xl rose-glow transition-all hover:gold-border cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">spa</span>
+<input class="w-5 h-5 rounded border-outline text-tertiary focus:ring-tertiary" type="checkbox"/>
+</div>
+<h3 class="text-headline-sm font-headline-sm mb-2">Signature Facial</h3>
+<p class="text-on-surface-variant text-sm mb-4">A rejuvenating 60-minute deep cleansing and hydration therapy for glowing skin.</p>
+<span class="text-primary font-bold">GHC 450.00</span>
+</div>
+<!-- Service Card 2 -->
+<div class="group relative p-6 bg-surface border border-outline-variant rounded-xl rose-glow transition-all hover:gold-border cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">content_cut</span>
+<input checked="" class="w-5 h-5 rounded border-outline text-tertiary focus:ring-tertiary" type="checkbox"/>
+</div>
+<h3 class="text-headline-sm font-headline-sm mb-2">Hair Styling &amp; Treatment</h3>
+<p class="text-on-surface-variant text-sm mb-4">Premium hair care including wash, steam treatment, and professional styling.</p>
+<span class="text-primary font-bold">GHC 350.00</span>
+</div>
+<!-- Service Card 3 -->
+<div class="group relative p-6 bg-surface border border-outline-variant rounded-xl rose-glow transition-all hover:gold-border cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">auto_awesome</span>
+<input class="w-5 h-5 rounded border-outline text-tertiary focus:ring-tertiary" type="checkbox"/>
+</div>
+<h3 class="text-headline-sm font-headline-sm mb-2">Luxury Manicure</h3>
+<p class="text-on-surface-variant text-sm mb-4">Complete hand care with gel polish and organic paraffin treatment.</p>
+<span class="text-primary font-bold">GHC 180.00</span>
+</div>
+<!-- Service Card 4 -->
+<div class="group relative p-6 bg-surface border border-outline-variant rounded-xl rose-glow transition-all hover:gold-border cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">face_4</span>
+<input class="w-5 h-5 rounded border-outline text-tertiary focus:ring-tertiary" type="checkbox"/>
+</div>
+<h3 class="text-headline-sm font-headline-sm mb-2">Full Glam Makeup</h3>
+<p class="text-on-surface-variant text-sm mb-4">Editorial-ready makeup application for special occasions and weddings.</p>
+<span class="text-primary font-bold">GHC 500.00</span>
+</div>
+</div>
+</section>
+<!-- Step 2: Date & Time Picker -->
+<section>
+<div class="flex items-center gap-4 mb-8">
+<span class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold">2</span>
+<h2 class="text-headline-sm font-headline-sm">Date &amp; Time</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-surface-container-low p-8 rounded-2xl">
+<!-- Mini Calendar -->
+<div class="space-y-4">
+<div class="flex justify-between items-center px-2">
+<span class="font-bold">May 2026</span>
+<div class="flex gap-2">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary">chevron_left</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary">chevron_right</span>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-2 text-center text-xs font-label-caps">
+<span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
+</div>
+<div class="grid grid-cols-7 gap-2 text-center">
+<span class="p-2 text-on-surface-variant opacity-30">28</span>
+<span class="p-2 text-on-surface-variant opacity-30">29</span>
+<span class="p-2 text-on-surface-variant opacity-30">30</span>
+<span class="p-2 hover:bg-primary-container/20 rounded-full cursor-pointer">1</span>
+<span class="p-2 hover:bg-primary-container/20 rounded-full cursor-pointer">2</span>
+<span class="p-2 hover:bg-primary-container/20 rounded-full cursor-pointer">3</span>
+<span class="p-2 hover:bg-primary-container/20 rounded-full cursor-pointer">4</span>
+<span class="p-2 hover:bg-primary-container/20 rounded-full cursor-pointer">5</span>
+<span class="p-2 hover:bg-primary-container/20 rounded-full cursor-pointer">6</span>
+<span class="p-2 bg-tertiary text-on-tertiary rounded-full font-bold">7</span>
+<span class="p-2 hover:bg-primary-container/20 rounded-full cursor-pointer">8</span>
+<span class="p-2 hover:bg-primary-container/20 rounded-full cursor-pointer">9</span>
+<span class="p-2 hover:bg-primary-container/20 rounded-full cursor-pointer">10</span>
+<span class="p-2 hover:bg-primary-container/20 rounded-full cursor-pointer">11</span>
+</div>
+</div>
+<!-- Time Slots -->
+<div class="space-y-4">
+<span class="text-label-caps font-label-caps block px-2">Available Slots</span>
+<div class="grid grid-cols-3 gap-3">
+<button class="py-2 px-4 rounded-lg bg-surface border border-outline-variant hover:border-tertiary transition-all text-sm">09:00 AM</button>
+<button class="py-2 px-4 rounded-lg bg-surface border border-outline-variant hover:border-tertiary transition-all text-sm">10:30 AM</button>
+<button class="py-2 px-4 rounded-lg bg-tertiary text-on-tertiary font-bold text-sm">12:00 PM</button>
+<button class="py-2 px-4 rounded-lg bg-surface border border-outline-variant hover:border-tertiary transition-all text-sm">01:30 PM</button>
+<button class="py-2 px-4 rounded-lg bg-surface border border-outline-variant hover:border-tertiary transition-all text-sm">03:00 PM</button>
+<button class="py-2 px-4 rounded-lg bg-surface border border-outline-variant hover:border-tertiary transition-all text-sm">04:30 PM</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Step 3: Stylist Selection -->
+<section>
+<div class="flex items-center gap-4 mb-8">
+<span class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold">3</span>
+<h2 class="text-headline-sm font-headline-sm">Choose Your Professional</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+<!-- Stylist 1 -->
+<div class="group text-center space-y-4 cursor-pointer">
+<div class="relative mx-auto w-32 h-32 rounded-full overflow-hidden border-2 border-transparent group-hover:border-tertiary transition-all">
+<img class="w-full h-full object-cover" data-alt="A portrait of a professional beauty stylist with a warm smile, wearing a minimalist silk apron. The background is a soft-focus high-end beauty salon with golden lighting and pink floral accents. The image follows a luxury editorial aesthetic with soft skin tones and bright, clean highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMBpFLwjng2ptAV_tTZ-AbsQRRTFAlz5fA1FbZSjoRkh8quan-7DXuc_y78oTz_7Zw3vlu4p0YkgWS5iXnELcUrGH5rAgJDD0P4UZj7VwijtZGBn831hso2o5nteISkVLigXnlwMdlebZSKuxOzxAqBJAVfIL1-LGOSPfTTg-sAbmqc2Dna-rhCSOhgOn0FvTvDrYg8FqaEZ1Zb5jwGe-Wb_2-3T2ULYqEX9CvJ1iCLImPtED_5347KLtMF948iJt7MgziDOr5PlPD"/>
+</div>
+<div>
+<h4 class="font-bold">Deborah Dodoo</h4>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest">Master Stylist</p>
+</div>
+</div>
+<!-- Stylist 2 (Selected) -->
+<div class="group text-center space-y-4 cursor-pointer">
+<div class="relative mx-auto w-32 h-32 rounded-full overflow-hidden border-2 border-tertiary ring-4 ring-tertiary-container/20 transition-all">
+<img class="w-full h-full object-cover" data-alt="A professional makeup artist of West African descent with elegant styling, looking confidently at the camera. The background is a blurred high-end studio with soft rose-tinted lighting. The aesthetic is clean, professional, and luxurious, emphasizing premium beauty services." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1qk2R-qC7CTcP8rf08NyGqFxNAk1sJUOi4HGnc1fo_xUtr9oVg8dEOhkJpQFFLfR-tq0ZZWWwhnohHUA4Q2Umr9_1Msw-QtKz1FDIlYpccu_2KJa-5OIHxEW74bO3e0uudXcKcmyUa0Ik2cHU1DberhCwlHtLEaGuPKBP3mXhmoT1WOVRRdabxfYrKCZTAKaUyuD7pTeSb_fKmMN1jtyVlQh9pKPIfNDhrkmlThj7LSQVyU8hNt6JR9xiG1kWBFd2jLejIHTZ_Ntc"/>
+<div class="absolute inset-0 bg-tertiary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-tertiary">Deborah Dodoo</h4>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest">Master Stylist</p>
+</div>
+</div>
+<!-- Stylist 3 -->
+<div class="group text-center space-y-4 cursor-pointer">
+<div class="relative mx-auto w-32 h-32 rounded-full overflow-hidden border-2 border-transparent group-hover:border-tertiary transition-all">
+<img class="w-full h-full object-cover" data-alt="A professional skin specialist in a clinical yet warm environment. The person wears a clean white coat with minimal branding. The lighting is bright and even, highlighting a serene and hygienic spa setting. The overall mood is sophisticated and expert." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ5ntZlA3_sDAvkV4BncAXo2IjMLShUe6j8ZMbvZs7vhksUAaYXCwtPsPQrpdGIf-yaD0p1pyazldHvW64iQe_h6g9WTf2zoN557AvHnIGm2AdStAy5McwvLI3gzF2pYhMsd35nWR8vHJQIbHHl6SwGzXZe1OAZIpMmGRs_ywQbkMjVWn5xZ8ul15hC2aXwWMdnj0wm0I8rWHbp8p1Y9OBnQSbh7SGxTDIdPjCNMG1el65J--keudPPKwM8RXNYJ3ARwyEB3GZEOU0"/>
+</div>
+<div>
+<h4 class="font-bold">Esi Boateng</h4>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest">Skin Specialist</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Step 4: Customer Details -->
+<section>
+<div class="flex items-center gap-4 mb-8">
+<span class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold">4</span>
+<h2 class="text-headline-sm font-headline-sm">Customer Information</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-label-caps font-label-caps text-on-surface-variant px-1">Full Name</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-1 focus:ring-tertiary transition-all" placeholder="Adjoa Mensah" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-label-caps font-label-caps text-on-surface-variant px-1">Email Address</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-1 focus:ring-tertiary transition-all" placeholder="adjoa@example.com" type="email"/>
+</div>
+<div class="space-y-2 md:col-span-2">
+<label class="text-label-caps font-label-caps text-on-surface-variant px-1">Phone Number</label>
+<div class="flex">
+<span class="bg-surface-variant p-4 rounded-l-xl border-r border-outline-variant flex items-center">+233</span>
+<input class="w-full bg-surface-container-low border-none rounded-r-xl p-4 focus:ring-1 focus:ring-tertiary transition-all" placeholder="24 123 4567" type="tel"/>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right: Summary & Confirmation Sticky Card -->
+<aside class="lg:col-span-4 lg:sticky lg:top-32">
+<div class="glass-surface border border-outline-variant rounded-2xl p-8 rose-glow space-y-8">
+<h3 class="text-headline-sm font-headline-sm text-center">Appointment Summary</h3>
+<div class="space-y-4 border-b border-outline-variant pb-6">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Service</span>
+<span class="font-bold">Hair Styling</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Professional</span>
+<span class="font-bold">Derby Mensah</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Date</span>
+<span class="font-bold">Oct 7, 2024</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Time</span>
+<span class="font-bold">12:00 PM</span>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center text-lg">
+<span>Total Amount</span>
+<span class="text-primary font-bold">GHC 350.00</span>
+</div>
+<p class="text-[10px] text-on-surface-variant text-center italic">Pricing is subject to final consultation at the salon.</p>
+</div>
+<div class="space-y-4">
+<button class="w-full bg-tertiary text-on-tertiary py-4 rounded-full font-label-caps tracking-widest gold-border hover:shadow-lg transition-all active:scale-95">CONFIRM BOOKING</button>
+<button class="w-full flex items-center justify-center gap-2 border border-secondary text-secondary py-4 rounded-full font-label-caps tracking-widest hover:bg-secondary/10 transition-all">
+<span class="material-symbols-outlined text-lg">chat</span>
+                            WHATSAPP BOOKING
+                        </button>
+</div>
+<div class="bg-surface-container-high p-4 rounded-xl flex gap-3">
+<span class="material-symbols-outlined text-primary">info</span>
+<p class="text-xs text-on-surface-variant">Cancellation Policy: Please cancel at least 24 hours in advance to avoid a service fee.</p>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest border-t border-secondary-container/30 w-full rounded-t-xl">
+<div class="flex flex-col md:flex-row justify-between items-center py-section-mobile md:py-16 px-gutter max-w-container-max mx-auto gap-8">
+<div class="text-center md:text-left">
+<h2 class="text-headline-sm font-headline-sm text-primary mb-2">Dherbyz_Glam</h2>
+<p class="text-body-md text-on-surface-variant">Modern Beauty Sanctuary in Kwashieman, Ghana.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6 md:gap-12">
+<a class="text-on-surface-variant text-label-caps font-label-caps hover:text-tertiary transition-colors" href="#">Services</a>
+<a class="text-on-surface-variant text-label-caps font-label-caps hover:text-tertiary transition-colors" href="#">Contact Us</a>
+<a class="text-on-surface-variant text-label-caps font-label-caps hover:text-tertiary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant text-label-caps font-label-caps hover:text-tertiary transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="text-on-surface-variant text-label-caps font-label-caps text-center md:text-right">
+                © 2026 DHERBYZ_GLAM. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+</body></html>

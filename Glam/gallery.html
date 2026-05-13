@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gallery | Dherbyz_Glam</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#eedfe1",
+                        "surface-container-low": "#fff0f2",
+                        "on-surface": "#211a1b",
+                        "inverse-on-surface": "#fcedef",
+                        "on-secondary-container": "#7a4e4f",
+                        "error": "#ba1a1a",
+                        "outline": "#827473",
+                        "primary-container": "#d4a5a5",
+                        "tertiary-container": "#d2ad35",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#ffdad9",
+                        "surface": "#fff8f8",
+                        "primary": "#7b5455",
+                        "on-tertiary-container": "#534100",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#fff8f8",
+                        "surface-tint": "#7b5455",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#504444",
+                        "tertiary-fixed": "#ffe088",
+                        "secondary-fixed": "#ffdad9",
+                        "tertiary": "#735c00",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#fdc3c3",
+                        "surface-dim": "#e5d7d9",
+                        "surface-container-highest": "#eedfe1",
+                        "secondary": "#7f5353",
+                        "surface-container-high": "#f4e5e7",
+                        "on-primary-fixed": "#2f1314",
+                        "on-primary-fixed-variant": "#603d3e",
+                        "outline-variant": "#d4c2c2",
+                        "inverse-surface": "#372e30",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#f1b8b8",
+                        "on-secondary-fixed-variant": "#643c3c",
+                        "on-primary-container": "#5d3a3b",
+                        "on-background": "#211a1b",
+                        "on-secondary-fixed": "#311213",
+                        "surface-container": "#f9eaec",
+                        "surface-bright": "#fff8f8",
+                        "primary-fixed-dim": "#ecbbba",
+                        "inverse-primary": "#ecbbba",
+                        "on-tertiary-fixed-variant": "#574500"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-desktop": "120px",
+                        "section-mobile": "64px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Playfair Display"],
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "headline-md": ["Playfair Display"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .rose-shadow {
+            box-shadow: 0 10px 30px -10px rgba(194, 142, 142, 0.3);
+        }
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+        @media (min-width: 768px) { .masonry-grid { column-count: 2; } }
+        @media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+        .gold-border {
+            border: 1px solid #d2ad35;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md dark:bg-inverse-surface/80 border-b border-tertiary/20 shadow-sm shadow-secondary/10">
+<div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<span class="text-headline-md font-headline-md tracking-tighter text-primary dark:text-primary-fixed-dim">Dherbyz_Glam</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-300 text-label-caps font-label-caps uppercase" href="index.html">HOME</a>
+<a class="text-tertiary font-bold border-b border-tertiary text-label-caps font-label-caps uppercase" href="services.html">SERVICE</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-300 text-label-caps font-label-caps uppercase" href="gallery.html">GALLERY</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-300 text-label-caps font-label-caps uppercase" href="booking.html">BOOKING</a>
+</nav>
+<button class="bg-tertiary-container text-on-tertiary-container px-6 py-2.5 rounded-full text-label-caps font-label-caps hover:scale-95 transition-all shadow-md">
+                BOOK NOW
+            </button>
+</div>
+</header>
+<main class="pt-32 pb-section-desktop">
+<!-- Gallery Header -->
+<section class="max-w-container-max mx-auto px-gutter mb-16 text-center">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6">The Art of Glamour</h1>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">Explore our collection of curated beauty transformations, from editorial makeup to precision nail artistry and luxury hair styling.</p>
+<!-- Category Chips -->
+<div class="flex flex-wrap justify-center gap-4">
+<button class="bg-secondary-container text-on-secondary-container px-8 py-3 rounded-full font-label-caps text-label-caps rose-shadow">ALL WORK</button>
+<button class="bg-surface-container text-on-surface-variant hover:bg-secondary-container hover:text-on-secondary-container px-8 py-3 rounded-full font-label-caps text-label-caps transition-all">MAKEUP</button>
+<button class="bg-surface-container text-on-surface-variant hover:bg-secondary-container hover:text-on-secondary-container px-8 py-3 rounded-full font-label-caps text-label-caps transition-all">HAIR</button>
+<button class="bg-surface-container text-on-surface-variant hover:bg-secondary-container hover:text-on-secondary-container px-8 py-3 rounded-full font-label-caps text-label-caps transition-all">NAILS</button>
+</div>
+</section>
+<!-- Masonry Gallery -->
+<section class="max-w-container-max mx-auto px-gutter mb-section-desktop">
+<div class="masonry-grid">
+<!-- Item 1 -->
+<div class="masonry-item relative group overflow-hidden rounded-xl rose-shadow border border-surface-variant/50">
+<img alt="Bridal Makeup" class="w-full h-auto transform transition-transform duration-700 group-hover:scale-110" data-alt="A high-end editorial close-up of a stunning bridal makeup look on a model with warm skin tones. The makeup features shimmering gold eyelids, voluminous lashes, and a glossy nude lip, reflecting the minimalist luxury of Dherbyz_Glam. The lighting is soft and diffused, creating a serene, glowing aesthetic with a soft pink-toned background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYsOEg_q7stk-DF1aPKThHkw6jIYoCPX3lXEUi1l2gTlaJSeOyZel0FI0LApSODnpFCwlRUe0pU8RwJe7zGqGirCTKv0SK3auO-S9jcjDgZTAM8j_PSWSpxltVCK_5GT9pYIwKWk9caIMktCLvl5T-G5ez67Nxw7QMTMIMtJLhgpik0h5O2AKHbCaH4UsyyZltwDKHzAPSR8fuFBpnozAWGmWzPNT12RycP81wYKkuWK3ZojSYiVKaA1KEHNzfXk2z70yOZRvvrDYB"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="text-label-caps font-label-caps text-tertiary-fixed mb-1">MAKEUP</span>
+<h3 class="text-headline-sm font-headline-sm text-white">Ethereal Bridal Glow</h3>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="masonry-item relative group overflow-hidden rounded-xl rose-shadow border border-surface-variant/50">
+<img alt="Luxury Hair" class="w-full h-auto transform transition-transform duration-700 group-hover:scale-110" data-alt="A professional photograph showcasing a luxury hair transformation featuring long, voluminous waves with subtle caramel highlights. The hair is impeccably styled with a healthy shine, set against a minimalist studio background with soft rose lighting. The overall mood is sophisticated and premium, embodying the international standards of a luxury beauty sanctuary." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw7mvJKjqzpJ3ZELhAaAnOMR40wA_YSNuc5yQs6yJ41BvFYHsJhj1tUpk9W6gI2uJbJJ5UWL1mAtRG90-2zd4_yu3MbF7OnTQ_2W2sM6SmZHA2E6Dx7FFiVWz7AkbiN-vxvcKIU1gxTL84r4a54qNj7XuJu2I2L9CZckbV6CJuPzlGfcTTYknzaaMxiwK8GZrw_jvnka8gt6F3Zv_3TYRUAnjC3QR9hZSzg8jaNBof3A7kAJcIHehRbFhjmV7spUsqvgVJe_yJfvXu"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="text-label-caps font-label-caps text-tertiary-fixed mb-1">HAIR</span>
+<h3 class="text-headline-sm font-headline-sm text-white">Hollywood Waves</h3>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="masonry-item relative group overflow-hidden rounded-xl rose-shadow border border-surface-variant/50">
+<img alt="Nail Art" class="w-full h-auto transform transition-transform duration-700 group-hover:scale-110" data-alt="Exquisite nail art design featuring soft pink almond-shaped nails with delicate gold metallic foil accents. The hands are posed elegantly on a soft velvet texture, illuminated by bright, clean light that highlights the precision of the manicure. The color palette consists of soft nudes, blushes, and metallic gold, aligning with the minimalist glassmorphism brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGl0mIhcujvZWUDe80w_o7kNmIbGPF0i7mVD3IVAeWn0arURDLrnziR9sgP4da0_1JzHWnAhemRo25vs6leSzzVV9jWJBpnB4NmwPECDUlLm2ovAcwp4a8r--PwKZ20ISxRT591w8NLRw5L5HRqW-OYvs7a-Wp0nFnarBKK9h2gjJiG_J6qKxJjs0FsasHeAL-zxO2c7zjcXtrDprOBOvTlFJrOXiZW2PpiROLji8ao9GS368PiNnzADl9O94llcHNx8qUXY-G2JXB"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="text-label-caps font-label-caps text-tertiary-fixed mb-1">NAILS</span>
+<h3 class="text-headline-sm font-headline-sm text-white">Golden Luxe Mani</h3>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="masonry-item relative group overflow-hidden rounded-xl rose-shadow border border-surface-variant/50">
+<img alt="Editorial Makeup" class="w-full h-auto transform transition-transform duration-700 group-hover:scale-110" data-alt="Bold editorial makeup look on a model, featuring a sharp winged eyeliner and deep berry lips. The image is captured in a high-contrast style with crisp lighting that emphasizes skin texture and makeup detail. The background is a matte, tonal pink that complements the luxurious aesthetic of a premium beauty escape in Ghana." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxT_Rv9vbt5Xd8nKyTg01Y-rX_0WE4L5ZepSqkaiNnxU-JX_OXKyKFXu5ihaH3G64WiST3q0AGHNDJ9KH3PDfSV1llAJzV_A5QTpyf0jd4MRR14dUav1JiIXhm8ox9ZHa93J9j7Qjm2IaXO_5gyGDZTKIeNB3xZ4eOoZ5NuUhDJ9MuCIKXve8eDkAy8FrF7_3paiPkQH-UUNL3U7BV1LL5bGhKmXARvRPllJZdZ4spWtBpqh90pUQnUEMf6US1xkD4VqvLyPIa4H_U"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="text-label-caps font-label-caps text-tertiary-fixed mb-1">MAKEUP</span>
+<h3 class="text-headline-sm font-headline-sm text-white">Editorial Vibe</h3>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="masonry-item relative group overflow-hidden rounded-xl rose-shadow border border-surface-variant/50">
+<img alt="Sleek Hair" class="w-full h-auto transform transition-transform duration-700 group-hover:scale-110" data-alt="A portrait of a woman with a sleek, high-shine ponytail with intricate braid detailing at the base. The style is modern and professional, captured in a clean, minimalist setting with warm ambient lighting. The visual language communicates high-end beauty services and attainable luxury for a sophisticated clientele." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuqvccAca1AAWpWYsRphLHYQCoYTC2IDq1mnNeRP57YuAY1jrX3jjcXkZ0uFsmL6aC5ULXxvj4beUoXH9X2QszHz5GTGSfIuT6B5JLdR2KC9IfPevzLSOEftVyxRY3tbsxaRRKzEnJtkeyHhsefW1cwvnqh-b-azt9UslLOzQyeFkSMXlhZGdDL6RqR5MjlZUYEwz2ssw7DbpS-yhHVlj9IP9mSOWeBDPBam-eVzOQmiUxzB0TSyyF7rttveJkPzj3AIwXodt8LbnC"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="text-label-caps font-label-caps text-tertiary-fixed mb-1">HAIR</span>
+<h3 class="text-headline-sm font-headline-sm text-white">Sleek Ponytail</h3>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="masonry-item relative group overflow-hidden rounded-xl rose-shadow border border-surface-variant/50">
+<img alt="Abstract Nails" class="w-full h-auto transform transition-transform duration-700 group-hover:scale-110" data-alt="Contemporary abstract nail art featuring a mix of matte blush pink and glossy white sections separated by thin gold lines. The photo is clean and high-contrast, showcasing the artist's precision and the premium quality of the nail materials used in a high-end salon setting. The lighting is soft-focus and serene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYKW9zAAoX5_OE2QSdyc4eo_vbjWK0iILZ1LwsdM_dMX_PS2Ck9bS49odvik4ZqsAx1OabYVcoZorQWp_687Aojwn2sbw2XWQ1sNF42Zt_7Ybj0ctDUdQFBUAD20FkiXumMhtephyWzflWBmkA2N3OMuoxsflBN8WeFURTEaBX53y8NU5ue7axZkm3LfJLbk3ooQZH-84fxkIuVcXeQS7js-cQ176xSGYGXfIIqnyD3mhDNyAzIoA9Z4mROCFuC7kl7lmuZ-0GxRO1"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="text-label-caps font-label-caps text-tertiary-fixed mb-1">NAILS</span>
+<h3 class="text-headline-sm font-headline-sm text-white">Modern Geometry</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Before & After Section -->
+<section class="bg-surface-container-low py-section-desktop border-y border-secondary-container/30">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-16">
+<span class="text-label-caps font-label-caps text-primary tracking-widest block mb-4 uppercase">REAL TRANSFORMATIONS</span>
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Magic in the Details</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto">Witness the precision and care we put into every appointment. From natural enhancement to dramatic transformation.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<!-- Transformation Slider Concept (Static Representation) -->
+<div class="relative rounded-2xl overflow-hidden rose-shadow gold-border aspect-[4/5] md:aspect-square">
+<div class="absolute inset-0 flex">
+<div class="w-1/2 h-full relative border-r-2 border-white z-10 overflow-hidden">
+<img alt="Before" class="absolute h-full w-auto max-w-none left-0 object-cover grayscale-[30%]" data-alt="A 'before' shot of a woman with natural, unstyled hair and skin, presented in a clean but raw aesthetic. The lighting is natural and neutral, providing a realistic baseline for a beauty transformation. The image is part of a series showcasing the professional standards and editorial luxury of Dherbyz_Glam salon services." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5t0hOau-9sKcjetwnkFANK6QD4NnSE64XcVv4U0KMIxGjkbLeTM_lJKwwzpt5cYxqJcFF6iSjUxudBo3WI6yomAd6ci58Ad7wnKh03BZU8ZwzPgCgw2nSvd2eUJ6Zc8vvUEQjVKI1yRCwdzqpgxYiwtI6StrQ90baj6fA4nNauePOmV67AdWjqDCLnEnlKCLHWD0N6YtaQTlyeF43pkHz_Zk-Tk1wW3t2q0JNqwm0sFLYBNp7ysvr-3GYxS-w9Uv48uZinNherpn1"/>
+<span class="absolute top-4 left-4 bg-black/40 backdrop-blur-md text-white px-3 py-1 rounded-full text-[10px] font-label-caps">BEFORE</span>
+</div>
+<div class="w-1/2 h-full relative">
+<img alt="After" class="absolute h-full w-auto max-w-none right-0 object-cover" data-alt="An 'after' shot showing a dramatic beauty transformation with flawless, glowing makeup and expertly styled hair. The lighting is warm and golden, creating an editorial, high-end magazine feel. The subject exudes confidence and serenity, reflecting the 'VIP' experience and international quality of the Accra-based beauty sanctuary." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAkBPkz1otWJAN39iX1xskAZUZK-eZ1pTHKlgCS2JprCx2vkdAoFfEvZ0Z24pLJCL4hiouYpf1_BhccxuLZgE5Py8DHMRCsNEwp94RzSuK8owMVXiuYk5CCeiN9V5V4vGJNMbe8We5_z4ch8cN2VTf4DiBkC7lCUzo0_5g9nT0usTEfbx5rEUZTfDnPJ9GBAveDv0Ve8ynIy3blLV_f_noiUUxnQ26iyUQJmhJ3W6wxEDP3aCG9HAw0rFBKk4o1Vqyex4HZnLV7Wv4"/>
+<span class="absolute top-4 right-4 bg-tertiary-container/80 backdrop-blur-md text-on-tertiary-container px-3 py-1 rounded-full text-[10px] font-label-caps">AFTER</span>
+</div>
+</div>
+<!-- Slider Handle -->
+<div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-0.5 bg-white z-20 flex items-center justify-center">
+<div class="w-10 h-10 rounded-full bg-white shadow-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="unfold_more" style="transform: rotate(90deg);">unfold_more</span>
+</div>
+</div>
+</div>
+<div class="space-y-8">
+<div class="glass-card p-8 rounded-xl border border-primary/10 rose-shadow">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Glamorous Transformation</h3>
+</div>
+<p class="text-on-surface-variant mb-6">Our signature service focuses on enhancing your natural features while adding a touch of editorial sophistication. This look features a custom-blended foundation and precision lash application.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-2 text-label-caps font-label-caps text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="check_circle">check_circle</span> 
+                                    Custom Skin Prep
+                                </li>
+<li class="flex items-center gap-2 text-label-caps font-label-caps text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="check_circle">check_circle</span> 
+                                    Signature Lash Tech
+                                </li>
+<li class="flex items-center gap-2 text-label-caps font-label-caps text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="check_circle">check_circle</span> 
+                                    High-Shine Gloss Finish
+                                </li>
+</ul>
+</div>
+<div class="flex gap-4">
+<button class="bg-tertiary text-on-tertiary px-10 py-4 rounded-full font-label-caps text-label-caps hover:bg-primary transition-all gold-border">GET THE LOOK</button>
+<button class="bg-transparent border border-primary/20 text-primary px-10 py-4 rounded-full font-label-caps text-label-caps hover:bg-surface-variant/30 transition-all">VIEW MORE</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-container-max mx-auto px-gutter my-section-desktop">
+<div class="relative h-[400px] rounded-3xl overflow-hidden flex items-center justify-center text-center p-8">
+<img alt="Booking CTA" class="absolute inset-0 w-full h-full object-cover" data-alt="A panoramic wide shot of a luxury beauty salon interior with minimalist white furniture, soft pink accents, and warm ambient lighting. The space looks serene, high-end, and immaculately clean, evoking a sense of calm and luxury. Gold-framed mirrors and lush greenery add to the sanctuary-like feel of Dherbyz_Glam in Kwashieman." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCHbNlmGE0_IXqLmAABE-e8SfOw6-Je3uS7ZTxyGcmr-4649tNdpPAGPS2uAqgY8uQBOgXmGNqcjjQqsOS_t6StfeMNxrklsHgg7mrspQvXry0flMXtdBeWGJ4KEXEF13WzTzc2lHdiSJ0jd4kuuP04C1c6yZjZJQqfu1hPvTXNoJHsJVl2o3ef3GCgRNM0WwIBwzPn6mvS_L29pke_WxCSfO-lFx4-oev7LgAsRb7fWpj2ZfGSpdVeQDSaSDexh5hDOzowTd796At"/>
+<div class="absolute inset-0 bg-primary/40 backdrop-blur-sm"></div>
+<div class="relative z-10 max-w-2xl">
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-md text-white mb-6">Ready to reveal your best self?</h2>
+<p class="text-white/90 text-body-lg mb-10">Step into our sanctuary and let our experts craft your perfect look. Limited slots available this week.</p>
+<button class="bg-white text-primary px-12 py-4 rounded-full font-label-caps text-label-caps hover:scale-105 transition-all shadow-2xl">BOOK YOUR SESSION</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest w-full rounded-t-xl border-t border-secondary-container/30">
+<div class="flex flex-col md:flex-row justify-between items-center py-section-mobile md:py-16 px-gutter max-w-container-max mx-auto gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="text-headline-sm font-headline-sm text-primary">Dherbyz_Glam</span>
+<p class="text-on-surface-variant text-body-md max-w-xs text-center md:text-left">Your luxury beauty sanctuary in the heart of Kwashieman, Ghana.</p>
+<div class="flex gap-4 mt-2">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:text-tertiary transition-colors" data-icon="photo_camera">photo_camera</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:text-tertiary transition-colors" data-icon="facebook">social_leaderboard</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:text-tertiary transition-colors" data-icon="mail">mail</span>
+</div>
+</div>
+<div class="flex flex-wrap justify-center gap-8 md:gap-16">
+<div class="flex flex-col gap-3">
+<span class="text-label-caps font-label-caps text-on-surface mb-2">QUICK LINKS</span>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors text-body-md" href="#">Services</a>
+<a class="text-primary font-bold underline text-body-md" href="#">Gallery</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors text-body-md" href="#">About Us</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-label-caps font-label-caps text-on-surface mb-2">LEGAL</span>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors text-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors text-body-md" href="#">Contact Us</a>
+</div>
+</div>
+<div class="text-center md:text-right flex flex-col gap-4">
+<p class="text-label-caps font-label-caps text-on-surface-variant">© 2026 DHERBYZ_GLAM. ALL RIGHTS RESERVED.</p>
+<div class="flex items-center justify-center md:justify-end gap-2 text-tertiary">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+<span class="text-label-caps font-label-caps">Kwashieman, Accra</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

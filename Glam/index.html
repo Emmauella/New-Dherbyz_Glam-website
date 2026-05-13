@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#eedfe1",
+                    "surface-container-low": "#fff0f2",
+                    "on-surface": "#211a1b",
+                    "inverse-on-surface": "#fcedef",
+                    "on-secondary-container": "#7a4e4f",
+                    "error": "#ba1a1a",
+                    "outline": "#827473",
+                    "primary-container": "#d4a5a5",
+                    "tertiary-container": "#d2ad35",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#ffdad9",
+                    "surface": "#fff8f8",
+                    "primary": "#7b5455",
+                    "on-tertiary-container": "#534100",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#fff8f8",
+                    "surface-tint": "#7b5455",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#504444",
+                    "tertiary-fixed": "#ffe088",
+                    "secondary-fixed": "#ffdad9",
+                    "tertiary": "#735c00",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#fdc3c3",
+                    "surface-dim": "#e5d7d9",
+                    "surface-container-highest": "#eedfe1",
+                    "secondary": "#7f5353",
+                    "surface-container-high": "#f4e5e7",
+                    "on-primary-fixed": "#2f1314",
+                    "on-primary-fixed-variant": "#603d3e",
+                    "outline-variant": "#d4c2c2",
+                    "inverse-surface": "#372e30",
+                    "on-error": "#ffffff",
+                    "secondary-fixed-dim": "#f1b8b8",
+                    "on-secondary-fixed-variant": "#643c3c",
+                    "on-primary-container": "#5d3a3b",
+                    "on-background": "#211a1b",
+                    "on-secondary-fixed": "#311213",
+                    "surface-container": "#f9eaec",
+                    "surface-bright": "#fff8f8",
+                    "primary-fixed-dim": "#ecbbba",
+                    "inverse-primary": "#ecbbba",
+                    "on-tertiary-fixed-variant": "#574500"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-desktop": "120px",
+                    "section-mobile": "64px",
+                    "gutter": "24px",
+                    "base": "8px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Playfair Display"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "headline-md": ["Playfair Display"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "display-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 248, 248, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .rose-shadow {
+            box-shadow: 0 10px 30px -5px rgba(194, 142, 142, 0.3);
+        }
+        .gold-border {
+            border: 1px solid #d2ad35;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #7b5455, #d2ad35);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md dark:bg-inverse-surface/80 border-b border-tertiary/20 dark:border-tertiary-container/20 shadow-sm shadow-secondary/10">
+<div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim cursor-pointer">menu</span>
+<span class="text-headline-md font-headline-md tracking-tighter text-primary dark:text-primary-fixed-dim">Dherbyz_Glam</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-label-caps font-label-caps text-tertiary dark:text-tertiary-fixed font-bold border-b border-tertiary transition-colors duration-300" href="index.html">HOME</a>
+<a class="text-label-caps font-label-caps text-on-surface-variant dark:text-surface-variant hover:text-tertiary dark:hover:text-tertiary-fixed transition-colors duration-300" href="services.html">SERVICES</a>
+<a class="text-label-caps font-label-caps text-on-surface-variant dark:text-surface-variant hover:text-tertiary dark:hover:text-tertiary-fixed transition-colors duration-300" href="gallery.html">GALLERY</a>
+<a class="text-label-caps font-label-caps text-on-surface-variant dark:text-surface-variant hover:text-tertiary dark:hover:text-tertiary-fixed transition-colors duration-300" href="booking.html">BOOKING</a>
+</nav>
+<button class="bg-tertiary-container text-on-tertiary-container px-6 py-3 rounded-full text-label-caps font-label-caps tracking-widest hover:opacity-80 active:scale-95 transition-all gold-border">BOOK NOW</button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A high-end luxury beauty salon interior with soft ambient lighting, elegant rose gold accents, and velvet furniture. The atmosphere is serene and minimalist, featuring a soft pink and cream color palette that evokes a sense of high-end editorial luxury. The lighting is warm and inviting, highlighting pristine white marble surfaces and delicate floral arrangements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuXiJBTeVerayoH823-_Xm9Jk26Md1eucLkgHG-AHq6FahdzHJkiYwz-IlCO4jGpGE7sTHtrkGXJ4twXPdeSHjqBPHHjMevNcpp6JOFydFrMJ_u6qr_5r8T8yYGJJmfth8FE-uUR1M99kan6lkvtCHhr-Mqp1W4fU2sb52BwwsuR7_X38LyCJRpj9PJCwDZasyzdSH203Icy-KC2jtrlf8cl4_vi2y0oGsOJJ0NHjLS_kfEPty6LP6SyQTDj0ApFKd621wR1e4_yFq"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface/90 to-surface/20"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-gutter w-full flex flex-col items-center md:items-start text-center md:text-left">
+<span class="text-label-caps font-label-caps text-tertiary tracking-[0.3em] mb-4">ESTABLISHED IN GHANA</span>
+<h1 class="text-display-lg-mobile md:text-display-lg font-display-lg text-primary mb-6 max-w-2xl">
+                    Enhancing Beauty, <br/>Elevating Confidence
+                </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-10 max-w-lg">
+                    Discover a sanctuary of luxury in the heart of Kwashieman, Accra. We provide international beauty standards with a personal, Ghanaian touch.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-tertiary text-on-tertiary px-8 py-4 rounded-full text-label-caps font-label-caps gold-border rose-shadow hover:translate-y-[-2px] transition-all">BOOK APPOINTMENT</button>
+<button class="glass border border-primary/30 text-primary px-8 py-4 rounded-full text-label-caps font-label-caps hover:bg-surface transition-all">VIEW SERVICES</button>
+</div>
+</div>
+</section>
+<!-- Featured Services: Bento-ish Grid -->
+<section class="py-section-mobile md:py-section-desktop max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-16">
+<h2 class="text-headline-md font-headline-md text-primary mb-2">Our Signature Services</h2>
+<div class="w-20 h-1 bg-tertiary-container mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Service 1 -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl rose-shadow h-[400px]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A professional makeup artist applying high-end cosmetics to a model's face in a bright, modern studio. The scene is filled with soft-focus beauty, using a warm rose gold and nude color palette. The lighting is diffused and high-key, emphasizing the flawless finish of the makeup and the luxury environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArf9mZVrV3m5a1vL3gF9Sf-tEl4W0iMMyyArQJcBsQ0msAZ_u8-oTwHy2Oe6VySeOQT1JqvqFisWXo1N_7yveDTJxGq6gc8cb9X-HIvWNMViYlyP6mfbjKqzeAPxhsQZGrr4iPbQDLC5g7BkruLL3Y-6j66oOFPoAIXHFSJJwYw7X7slE-oiCYwGxoU7EDrXjg2beuvhIHrX_wAhbszjUwklnw4B3KsG7OOZWePSBmnCzwM1I47JZTRgeNfyM8Veoc3h2QH688Ycwr"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-8">
+<h3 class="text-headline-sm font-headline-sm text-on-primary">Editorial Makeup</h3>
+<p class="text-on-primary/80 text-body-md mb-4 max-w-md">Flawless skin and dramatic looks tailored for weddings, events, and shoots.</p>
+<a class="text-label-caps font-label-caps text-tertiary-fixed underline underline-offset-4" href="#">EXPLORE MAKEUP</a>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="md:col-span-4 glass rounded-xl rose-shadow border border-primary/10 flex flex-col">
+<div class="h-1/2 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Exquisite nail art featuring intricate gold leaf details on a soft blush pink base. The hands are posed elegantly against a silk fabric background. The lighting is soft and focused, creating a shimmering effect on the gold accents, reflecting the premium quality and artistic craftsmanship of the salon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSU8To1qHoqwU1A2Trhc7DuXuuwy21qlsLize7DgE56r6LrqTSNlks5sPQWTjUWXUDRbiatADEThYO3_lOmz0IOzQqaOS31T4h05s3qGd0OmICpG-y00aszxnph-8PbR6--G10hYO_5I5lyqQo4lPdnNrr5-ByJC98uj4vHhil31LTz7kRNY5hNPA1S7G1S4nP4-cfiF3fvMj70LB9hvVT82aqjFWCZDonKDqbSm32iQRN-tfmlioMkBACsvheMqtdGNjuvll_luvy"/>
+</div>
+<div class="p-6 flex-grow">
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2">Artisan Nails</h3>
+<p class="text-on-surface-variant text-body-md mb-6">From classic gel to intricate nail art, our designs are pure perfection.</p>
+<div class="mt-auto flex gap-2 flex-wrap">
+<span class="bg-surface-container-high text-primary px-3 py-1 rounded-full text-[10px] font-bold tracking-widest">GEL</span>
+<span class="bg-surface-container-high text-primary px-3 py-1 rounded-full text-[10px] font-bold tracking-widest">ART</span>
+</div>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="md:col-span-4 glass rounded-xl rose-shadow border border-primary/10 flex flex-col">
+<div class="h-1/2 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Extreme close-up of long, voluminous eyelashes with a natural yet dramatic curve. The eyes are bright and well-lit, showing detailed texture and high-quality extension application. The surrounding skin is soft and blurred, maintaining the minimalist glassmorphism aesthetic of the luxury beauty brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_l4oyW5SpQM3FeqbXezKAapqS_7WKErtMHjbJWvQuoPggruvQVu5g2SodKhAeJi2T4LQcPoDZ-Ru35lUCanH33uvD-epb4qechvgBcxs5YbXO5PjrxlrSIgqEm92Sx0nKG4FPSB0Sl7BQpho6xyDSrd_hHQlegzCoxHanxuk_yAtd-dXh6uiSbIzj-aDLlT7M85Oax4PVr48KEYaQWWAJzb7x3GQ1-dzjkO9_2ZlWejrvQYpVFdPnQrIyg2Q72dcoCCUI98WGqQmu"/>
+</div>
+<div class="p-6">
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2">Luxe Lashes</h3>
+<p class="text-on-surface-variant text-body-md">Mink and silk extensions applied with precision for a weightless, natural glow.</p>
+</div>
+</div>
+<!-- Service 4 -->
+<div class="md:col-span-8 bg-surface-container-low rounded-xl flex items-center p-8 md:p-12 relative overflow-hidden border border-tertiary-container/30">
+<div class="relative z-10">
+<h3 class="text-headline-md font-headline-md text-primary mb-4">Complete Your Look</h3>
+<p class="text-body-lg text-on-surface-variant max-w-md mb-8">View our full menu of hair, skin, and spa treatments designed to rejuvenate your spirit.</p>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full text-label-caps font-label-caps">VIEW ALL SERVICES</button>
+</div>
+<div class="absolute right-[-10%] bottom-[-20%] opacity-10">
+<span class="material-symbols-outlined text-[300px]" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="bg-surface-container py-section-mobile md:py-section-desktop">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="text-display-lg-mobile font-display-lg text-primary mb-6">A Sanctuary of <span class="italic text-tertiary">Elegance</span></h2>
+<p class="text-body-lg text-on-surface-variant mb-12">We believe beauty is an experience, not just a service. Our team combines global techniques with the warmth of Ghanaian hospitality.</p>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-white rounded-full flex items-center justify-center rose-shadow">
+<span class="material-symbols-outlined text-tertiary">verified</span>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-1">Certified Professionals</h4>
+<p class="text-body-md text-on-surface-variant">Our artists are trained by international masters to ensure excellence.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-white rounded-full flex items-center justify-center rose-shadow">
+<span class="material-symbols-outlined text-tertiary">eco</span>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-1">Premium Products</h4>
+<p class="text-body-md text-on-surface-variant">We use only hypoallergenic, high-performance professional brands.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-white rounded-full flex items-center justify-center rose-shadow">
+<span class="material-symbols-outlined text-tertiary">auto_awesome</span>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-1">Luxury Ambiance</h4>
+<p class="text-body-md text-on-surface-variant">Escape the hustle of Accra in our soundproof, chilled studio environment.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-10 -left-10 w-40 h-40 bg-tertiary-container/20 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-primary-container/20 rounded-full blur-3xl"></div>
+<img class="rounded-2xl rose-shadow w-full h-auto relative z-10 gold-border" data-alt="A tranquil beauty salon setting with a focus on high-end luxury products displayed on a marble counter. The background shows a soft, blurred reflection of a serene client in a plush robe. The overall aesthetic is minimalist glassmorphism, with layers of translucency and a warm, glowing pink light that creates a peaceful, VIP sanctuary feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCauU_se73xBwA3hHJ_Wbds3mNqUSRLlfgULBOeUa56I3qFdsyY5Ns9KuEfMYSP91nFCh60hEw7Iw-XFbg5XsI9W4Pj8UJ7z1kcWmNwOVH3Spawicx3PYptTrSFvhuW-alabcbsvWtT8EeyXlB_E2HsGEYCgiWsECcAIk8S1LLSahVrdFcM2VrVGLnrl4C4d6bSslI12fjgSx9GUGmlTLBjewccZXrSRopjTizU2sCIweJmMpCn8dqxttFygA8_xRWf_lV_kkE-MOsN"/>
+</div>
+</div>
+</section>
+<!-- Gallery Preview -->
+<section class="py-section-mobile md:py-section-desktop">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="text-label-caps font-label-caps text-tertiary">@DHERBYZ_GLAM</span>
+<h2 class="text-headline-md font-headline-md text-primary mt-2">The Glam Portfolio</h2>
+</div>
+<a class="hidden md:block text-label-caps font-label-caps border-b border-primary text-primary pb-1 hover:text-tertiary hover:border-tertiary transition-colors" href="#">VIEW ALL GALLERY</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<img class="aspect-square object-cover rounded-xl rose-shadow" data-alt="Close-up of a stunning bridal makeup look with soft smoky eyes and a glossy nude lip. The lighting is ethereal and soft-focused, capturing the high-end glamour of the salon's work. The palette is dominated by warm blush and gold tones, creating a timeless and sophisticated beauty aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDHTowOc3poaGNZdpRX4_6oc5zVKg-lgL5BlQrfONl6uJ-20MYZFBJKmQMq6utJuqi15VXSAHfLFTdx8UC6LBI51G87xI54rPCHii25rSiOlb008Fs2wcLxW_IfD8XXPXLBjCFJmcV5QQc2bLJhDz791qUcngXYMCBDlmNRaF1qyfyjN5ocLlWjBfNBdlLqaBV0sBN7jo6nWXBIhKFHF2xXoVXXIw9cS-U_tGjJlVC6F8QwJRZCJm5xTCYHowy_xrvBdytYut3Ntak"/>
+<img class="aspect-square object-cover rounded-xl rose-shadow" data-alt="A portrait of a woman with perfectly styled long waves and vibrant, glowing skin. The background is a minimalist studio setting with soft pink backlighting. The image exudes professional luxury and editorial beauty, highlighting the transformative services offered by the salon in Accra." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoY8G2goppByBN4m2OczjH6JmRark48JzAeBhn9-h9F3k81GZYmZNF00mSqmgTpWT8Y5oqrdH7AWgkjfzZzdzD5Q-A-6yatnNm-btkRbTwfUNY4n1bAgMvmnsp_vFCksqeDNN9myRuTzWOj8woaTdUhRhm2iTrLn-pqZWzuzYZ_93jqFXAOY6SXufE8A2XRMwBIcBSgg30UqHoi643_19I8VJRNRxKKuFetqLnNqRXAWIvC-15yoq-p2dX6CCkPVyjdKBt_orFW4i5"/>
+<img class="aspect-square object-cover rounded-xl rose-shadow" data-alt="Detail shot of vibrant artistic nail extensions with shimmering iridescent flakes and hand-painted metallic gold lines. The photo is taken with a shallow depth of field, focusing on the intricate artistry and the clean, premium feel of the studio environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4q9tyNdxpjsH1BbSTO39tFOfYQqLZSiChgEtEQjwZ-VK6SZrGguI2chzdnF39y3NtCHswRR8vxVCXFdqa9kvoKwOxECGxSpgbdoas7j_jPcvbjQRo2xf0LDgRZ2slqoEKMdZo-YH0AaMRthXnsP0WGWxDQB9xi1bp8EWBa1sXp7en1YjLIOGKdEg-GILm9mt5fScZqrg9ZSl8Yi0izVEpLJrRbL-nXPLRaBi0TMSXm94Kt4e8T_TIILMnzTsXnzORPxOqNSPeDOzF"/>
+<img class="aspect-square object-cover rounded-xl rose-shadow" data-alt="High-key beauty photography showing long, thick eyelashes and perfectly arched eyebrows. The skin is luminous and clear, reflecting a high standard of skincare and aesthetic services. The lighting is bright and modern, aligned with a luxurious and welcoming salon identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR2DSsSPk3CIVx4Idj37kwqe7TWQkRWYLvcGNwXgqw3hG_pRPGXT9NfhfctSPQln3YTY6ZlMbkB2WjMX09mQoO5d1g4aCfgG1_ZYti8vmT7zeNwmyRlFU3t9XH8VOd5GBJKZslZpx3KikLLkV0Ifu4k-37DI6znoiMgCfV8y1Tg54X-4hS36yayznDdd7OmnlriiIuZUl1VATr6egjuY2O0IpsG4Bz44_2fyBzTlQX9s534ezinBVAwWQ0UXKMujabuiGKoMoxKt-P"/>
+</div>
+</div>
+</section>
+<!-- Testimonial Slider (Static) -->
+<section class="bg-surface-container-high py-section-mobile md:py-section-desktop overflow-hidden">
+<div class="max-w-4xl mx-auto px-gutter text-center">
+<span class="material-symbols-outlined text-primary text-6xl mb-6" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<div class="glass p-10 md:p-16 rounded-3xl rose-shadow relative border border-white/50">
+<p class="text-headline-sm font-headline-sm text-primary mb-8 italic">
+                        "The most professional salon I have visited in Accra. The atmosphere is so peaceful, and my nails lasted for over 4 weeks without a single chip. Dherbyz is truly the best at what she does!"
+                    </p>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 rounded-full border-2 border-tertiary p-1 mb-4">
+<img class="w-full h-full object-cover rounded-full" data-alt="A portrait of a satisfied African client with a warm, radiant smile and professional makeup. She represents the demographic of successful women in Accra who frequent luxury salons. The background is softly blurred to keep the focus on her confidence and glow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEKoel1a22F8ybIUcX2W90RjJpBFSOLs-p6rng39LP57n6Sv_RgktkOQEw054nVgSsrCfXcweynZe4X2D3ZvbdKKFU87AnGSWDSSH2wEdvb-oXJR66VEH5bWjTuoD5CPd-jGtHq6phtPXy1QukYlZb_oR7nTFMmzQqbJnSY9orSZvjaT5am1rP0qeEDlLsm0KMqzrtjn0hVk6aRhYA__FzSShUJknXZ_MT5hNR0DQA1pbexYIzpBFAWdRVybpSU8_pzRw6AmSrFDWG"/>
+</div>
+<span class="text-label-caps font-label-caps text-primary tracking-widest">AKOSUA DANQUAH</span>
+<span class="text-body-md text-on-surface-variant">Entrepreneur</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Location Section -->
+<section class="py-section-mobile md:py-section-desktop max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="text-headline-md font-headline-md text-primary mb-6">Visit Our Sanctuary</h2>
+<p class="text-body-lg text-on-surface-variant mb-8">Conveniently located in Kwashieman, Accra, providing a serene escape for all your beauty needs.</p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary">location_on</span>
+<p class="text-body-md">Kwashieman-Accra, Near the Main Junction,<br/>Accra, Ghana</p>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary">schedule</span>
+<p class="text-body-md">Mon - Sat: 9:00 AM - 7:00 PM<br/>Sun: By Appointment Only</p>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary">phone_iphone</span>
+<p class="text-body-md">+233 (0) 209 195 517</p>
+</div>
+</div>
+<button class="mt-10 bg-surface border border-tertiary text-tertiary px-8 py-3 rounded-full text-label-caps font-label-caps hover:bg-tertiary hover:text-white transition-all">GET DIRECTIONS</button>
+</div>
+<div class="h-[400px] bg-surface-variant rounded-2xl overflow-hidden rose-shadow border border-primary/10">
+<img class="w-full h-full object-cover" data-alt="A stylized, artistic map-like view of a vibrant urban area in Accra, using a soft pastel color palette of pinks, golds, and creams. The image captures the essence of a premium location in a bustling city, reflecting the sophisticated and accessible nature of Dherbyz_Glam salon in the Kwashieman district." data-location="Kwashieman, Accra, Ghana" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADn-N1QdC7e8bQCdbYp3fHwuoWhklF_eI6VUzU4XkG-Khngu6fJxYay-y65JpOlV__dryjSsEOFUguUH-iyfOT3MPa9pncitAxwV-kUmgeqVVXnIeCnOFYuZWt2qVN1zLKDuamufXuok6hGf8QR_FpyhAwzZ6UEcDZ2fWb3OSgMx8H77I8T5-yR_JSTQkeQsCwLVKqMZ4i1Rj1f5nqv1_mRvDztENhDeL2Oc7ZdiqxDXOa8NLVOx2cwm21xdL94vHVjQxBIKyJQtfS"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest w-full rounded-t-xl border-t border-secondary-container/30">
+<div class="flex flex-col md:flex-row justify-between items-center py-section-mobile md:py-16 px-gutter max-w-container-max mx-auto gap-8">
+<div class="flex flex-col items-center md:items-start">
+<span class="text-headline-sm font-headline-sm text-primary mb-2">Dherbyz_Glam</span>
+<p class="text-body-md text-on-surface-variant text-center md:text-left">Your sanctuary of premium beauty in Accra.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-label-caps font-label-caps text-on-surface-variant hover:text-tertiary transition-colors" href="#">Services</a>
+<a class="text-label-caps font-label-caps text-on-surface-variant hover:text-tertiary transition-colors" href="#">Contact Us</a>
+<a class="text-label-caps font-label-caps text-on-surface-variant hover:text-tertiary transition-colors" href="#">Privacy Policy</a>
+<a class="text-label-caps font-label-caps text-on-surface-variant hover:text-tertiary transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</a>
+</div>
+</div>
+<div class="py-6 border-t border-secondary-container/10 text-center">
+<p class="text-label-caps font-label-caps text-on-surface-variant opacity-60">© 2026 DHERBYZ_GLAM. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+</body></html>
